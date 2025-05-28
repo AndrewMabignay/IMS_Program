@@ -1,14 +1,14 @@
 import './bootstrap';
 
 document.addEventListener('DOMContentLoaded', () => {
-	const button = document.getElementById('inventory-button');
-	const dropdown = document.querySelector('.inventory-list-container');
+	const inventoryButton = document.getElementById('inventory-button');
+	const inventoryDropdown = document.querySelector('.inventory-list-container');
 
-	button.addEventListener('click', () => {
-		if (dropdown.style.display === 'block') {
-			dropdown.style.display = 'none';
+	inventoryButton.addEventListener('click', () => {
+		if (inventoryDropdown.style.display === 'block') {
+			inventoryDropdown.style.display = 'none';
 		} else {
-			dropdown.style.display = 'block';
+			inventoryDropdown.style.display = 'block';
 		}
 	});
 });

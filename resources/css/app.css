@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import 'tailwindcss';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -16,19 +17,90 @@
 }
 
 :root {
-    --primary-color: #222831;
-    --secondary-color: #393E46;
-    --tertiary-color: #948979;
-    --quaternary-color: #DFD0B8;
+    /* ============= DARK THEME ============= */
+    --dark-color-background: #1B1F23;
+    --dark-color-sidebar: #24292E;
+    --dark-color-header: #2F363D;
+    --dark-color-cardPanel: #262B30;
+    
+    --dark-color-text-primary: #F5F5F5;
+    --dark-color-text-muted: #9CA3AF;
 
-    --button-color: #1B1F23;
+    --dark-color-first-accent: #3B82F6;
+    --dark-color-secondary-accent: #10B981;
+    --dark-color-danger-alert: #EF4444;
+    --dark-color-hover-effect: #2C3339;
+
+    /* ============= LIGHT THEME ============= */
+    --light-color-background: #F9FAFB;
+    --light-color-sidebar: #E5E7EB;
+    --light-color-header: #D1D5DB;
+    
+    --light-color-text-primary: #1B1F23;
+    --light-color-text-muted: #6B7280;
+
+    --light-color-accent: #2563EB;
+    --light-color-hover-effect: #DDE1E7;
+
+    /* LIGHT THEME | CARD PANEL */
+    --light-color-card-bg: #FFFFFF;
+    --light-color-border: #D1D5DB;
+    --light-color-shadow: rgba(0, 0, 0, 0.05);
+    --light-color-header-text: #1B1F23;
+    --light-color-subtext: #6B7280;
+
+    /* ============= GOOGLE FONT ============= */
+    --font-family-one: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family-one);
+
+    @apply bg-[var(--dark-color-background)] text-[var(--dark-color-text-primary)];
 }
 
 nav {
-    @apply bg-[var(--primary-color)];
+    @apply bg-[var(--dark-color-sidebar)];
 
     ul :where(li) {
-        background: var(--button-color);
+        @apply 
+            h-[45px] 
+            px-4 
+            text-[12.5px] 
+            font-normal 
+
+            flex
+
+            hover:bg-[var(--dark-color-hover-effect)] 
+            hover:border-b-1 
+            hover:border-b-[var(--light-color-text-muted)];
+
+        a {
+            @apply 
+                h-full 
+                w-full 
+                border-b 
+                border-b-[var(--light-color-text-muted)] 
+                flex 
+                items-center 
+                gap-[6px]
+                hover:border-b-0;
+
+            .icon-container {
+                @apply  
+                    w-[25px] 
+                    flex 
+                    justify-center 
+                    items-center;
+            }
+
+            label {
+                @apply 
+                    tracking-wide;
+            }
+        }
+
+        
     }
 }
 
